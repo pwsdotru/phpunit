@@ -1794,6 +1794,9 @@ XML;
 
     public function testAssertFileEqualsCanonicalizing(): void
     {
+        //Check that files is not equal by simple compare
+        $this->assertFileNotEquals(TEST_FILES_PATH . 'foo.txt', TEST_FILES_PATH . 'bar.txt');
+
         $this->assertFileEqualsCanonicalizing(TEST_FILES_PATH . 'foo.txt', TEST_FILES_PATH . 'foo.txt');
 
         $this->assertFileEqualsCanonicalizing(TEST_FILES_PATH . 'foo.txt', TEST_FILES_PATH . 'bar.txt');
